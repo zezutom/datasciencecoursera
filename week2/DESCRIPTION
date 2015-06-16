@@ -1,0 +1,9 @@
+Package: week2
+Title: 2nd Week Assignments 
+Version: 0.0.0.9000
+Authors@R: person("Tomas", "Zezula", email = "zezulatomas@gmail.com", role = c("aut", "cre"))
+Description: Implements the assignments
+Depends: R (>= 3.2.0)
+License: GPL
+LazyData: true
+Suggests: testthat
