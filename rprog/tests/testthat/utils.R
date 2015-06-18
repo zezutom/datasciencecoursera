@@ -4,6 +4,6 @@ getDataDir <- function(name) {
   file.path(PROJHOME, "data", name)
 } 
 
-getSourceFile <- function(name) {
-  file.path(PROJHOME, "R", name)
+getSourceFile <- function(...) {
+  file.path(PROJHOME, "R", ...)
 }

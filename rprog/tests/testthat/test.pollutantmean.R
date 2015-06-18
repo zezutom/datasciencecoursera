@@ -1,5 +1,5 @@
 source("utils.R")
-source(getSourceFile("pollutantmean.R"))
+source(getSourceFile("asgmt1", "pollutantmean.R"))
 
 assert_pollutantmean <- function(ids, pollutant, mean) {
   expect_that(pollutantmean(getDataDir("specdata"), pollutant, ids), equals(mean, tolerance = 0.001))

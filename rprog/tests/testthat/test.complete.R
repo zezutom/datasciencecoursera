@@ -1,5 +1,5 @@
 source("utils.R")
-source(getSourceFile("complete.R"))
+source(getSourceFile("asgmt1", "complete.R"))
 
 assert_complete <- function(ids, ids.expected, nobs.expected) {
   # The expected result
