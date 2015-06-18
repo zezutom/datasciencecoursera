@@ -2,5 +2,5 @@
 Course track - examples, exercises etc.
 
 ### [R Programming](https://github.com/zezutom/datasciencecoursera/tree/master/rprog)
-* [Assignment 1](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R)
+* [Assignment 1](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R/asgmt1)
 * Assignment 2
