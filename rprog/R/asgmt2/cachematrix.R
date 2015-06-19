@@ -3,7 +3,7 @@
 
 ## 'makeCacheMatrix' creates a wrapper around the provided matrix 'x'.
 ## The wrapper exposes an interface allowing to access and set the cached inverse
-## of the matrix 'x'.
+## of the provided matrix.
 makeCacheMatrix <- function(x = matrix()) {
   ## 'x' is a matrix whose inverse is to be calculated and cached.
   ## For 'x' to be considered invertible, it has to be a square matrix
@@ -31,9 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## 'cacheSolve' makes use of the 'solve' function to calculate
-## the inverse of a provided matrix. The calculation only happens
-## if no cached result is found. In that case the calculated inverse
-## is put into the cache so that can be used next time.
+## the inverse of the provided matrix. The calculation only happens
+## if no cached result is found. The calculated result is put into the cache.
 cacheSolve <- function(x, ...) {
   ## 'x' is assumed to be a wrapper returned by 'makeCacheMatrix'
   
