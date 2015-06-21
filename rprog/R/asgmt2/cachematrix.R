@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
   d <- dim(x)
   if (d[1] != d[2]) stop("The matrix is not invertible")  
   
-  # Caches the provided matrix
+  # Caches the calculated result 
   m <- NULL
 
   # Provides access to the original matrix
