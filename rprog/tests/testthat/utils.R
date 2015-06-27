@@ -1,7 +1,7 @@
 ## Returns an absolute, but portable directory path
 ## 'name' directory name
 getDataDir <- function(name) {
-  file.path(PROJHOME, "data", name)
+  file.path(PROJHOME, "resources", name)
 } 
 
 getSourceFile <- function(...) {
