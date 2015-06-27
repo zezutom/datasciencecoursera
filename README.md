@@ -4,4 +4,4 @@ Course track - examples, exercises etc.
 ### [R Programming](https://github.com/zezutom/datasciencecoursera/tree/master/rprog)
 * [Assignment 1: Air Pollution](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R/asgmt1)
 * [Assignment 2: Lexical Scoping](https://github.com/zezutom/datasciencecoursera/blob/master/rprog/R/asgmt2/cachematrix.R)
-* [Assignment 3: Hospital Comparison](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R/asgmt3)
+* [Assignment 3: Hospital Quality](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R/asgmt3)
