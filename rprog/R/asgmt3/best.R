@@ -16,8 +16,8 @@ best <- function(state, outcome) {
   ## Return hospital name in that state with lowest 30-day death rate
   outcome.data <- subset(outcome.data, outcome.data[, 7] == state)
   
-  # There is a problem with factors (data frame's column)
-  # The factor needs to be simplified first by calling as.character
+  # There is a problem with factors (data frame's columns)
+  # A factor needs to be simplified first by calling as.character
   # Only then it can be coerced to numbers.
   # See: http://stackoverflow.com/questions/20056874/as-numeric-is-rounding-positive-values-outputing-na-for-negative-values
   death.rate <- suppressWarnings(as.numeric(as.character(outcome.data[, outcomes[outcome]])))
@@ -26,7 +26,6 @@ best <- function(state, outcome) {
   death.rate.min <- subset(outcome.data, death.rate == min(death.rate, na.rm = TRUE))
   
   hospitals <- death.rate.min[, 2]
-  #print(death.rate.min[, c(7, 2, outcomes[outcome])])
   sort(as.character(hospitals))[1]
 }
 
