@@ -1,9 +1,10 @@
-## Functions 'makeCacheMatrix' and 'cacheSolve' allow to cache the inverse 
-## of a matrix which would otherwise be computed repeatedly.
+# Functions 'makeCacheMatrix' and 'cacheSolve' allow to cache the inverse 
+# of a matrix which would otherwise be computed repeatedly.
 
-## 'makeCacheMatrix' creates a wrapper around the provided matrix 'x'.
-## The wrapper exposes an interface allowing to access and set the cached inverse
-## of the provided matrix.
+# 'makeCacheMatrix' creates a wrapper around the provided matrix 'x'.
+# The wrapper exposes an interface allowing to access and set the cached inverse
+# of the provided matrix.
+
 makeCacheMatrix <- function(x = matrix()) {
   ## 'x' is a matrix whose inverse is to be calculated and cached.
   ## For 'x' to be considered invertible, it has to be a square matrix
