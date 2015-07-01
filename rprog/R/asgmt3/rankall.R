@@ -43,10 +43,10 @@ rankall <- function(outcome, num = "best") {
     stop("invalid rating")
   
   # Read outcome data
-  data <- read.csv(getResource("outcome-of-care-measures.csv"))
+  data <- read.csv(getResource("outcome-of-care-measures.csv"), colClasses = "character", na.strings = "Not Available")
   
   # Get a list of alphabetically sorted states
-  states = sort(unique(data[ ,7]))
+  states = sort(unique(data$State))
 
   # Pull values from the outcome column
   outcomeCol <- outcomes[outcome] 
@@ -55,10 +55,10 @@ rankall <- function(outcome, num = "best") {
   hospitals <- sapply(states, function(state) {
     
     # Filter records for the given state
-    state.data <- subset(data, data[, 7] == state)
+    state.data <- subset(data, data$State == state)
     
     # Rank the records by outcome and hospital names
-    state.data.sorted <- state.data[order(as.numeric(state.data[[outcomeCol]]), state.data[[2]], decreasing=FALSE, na.last=NA), ]
+    state.data.sorted <- state.data[order(as.numeric(state.data[[outcomeCol]]), state.data[[2]], na.last = NA), ]
     
     # Find the relevant row index
     row <- switch(as.character(num), "best" = 1, "worst" = nrow(state.data.sorted), num)

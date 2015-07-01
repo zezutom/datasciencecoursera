@@ -35,11 +35,11 @@ test_that("The tail of the list of hospitals ranked as worst for pneumonia is as
                 c("WI", "WV", "WY"))
 })
 
-test_that("The head of the list of the best hospitals for heart failure is as expected", {
-  assert_result(tail(rankall("pneumonia", "worst"), 3), 
+test_that("The tail of the list of the best hospitals for heart failure is as expected", {
+  assert_result(tail(rankall("heart failure"), 10), 
                 c("WELLMONT HAWKINS COUNTY MEMORIAL HOSPITAL", "FORT DUNCAN MEDICAL CENTER", 
                   "VA SALT LAKE CITY HEALTHCARE - GEORGE E. WAHLEN VA MEDICAL CENTER",
-                  " SENTARA POTOMAC HOSPITAL", "GOV JUAN F LUIS HOSPITAL & MEDICAL CTR",
+                  "SENTARA POTOMAC HOSPITAL", "GOV JUAN F LUIS HOSPITAL & MEDICAL CTR",
                   "SPRINGFIELD HOSPITAL", "HARBORVIEW MEDICAL CENTER", "AURORA ST LUKES MEDICAL CENTER",
                   "FAIRMONT GENERAL HOSPITAL", "CHEYENNE VA MEDICAL CENTER"), 
                 c("TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"))
