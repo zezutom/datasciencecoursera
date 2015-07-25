@@ -7,4 +7,4 @@ Course track - examples, exercises etc.
 * [Assignment 3: Hospital Quality](https://github.com/zezutom/datasciencecoursera/tree/master/rprog/R/asgmt3)
 
 ### [Getting and Cleaning Data](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata) 
-* [Project: Human Activity Recognition Using Smartphones](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata/project)
+* [Project: Human Activity Recognition Using Smartphones](https://github.com/zezutom/GetAndCleanDataProject)
