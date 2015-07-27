@@ -51,7 +51,7 @@ download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fd
 dat <- read.xlsx(fname, 1, rowIndex = 18:23, colIndex = 7:15)
 answer3 <- sum(dat$Zip*dat$Ext,na.rm=T)
 
-## Expected output: The value of sum(dat$Zip*dat$Ext,na.rm=T) is 36534720
+## Expected output: "The value of sum(dat$Zip*dat$Ext,na.rm=T) is 36534720"
 msg("The value of sum(dat$Zip*dat$Ext,na.rm=T) is", answer3)
 
 ## === Question 4 ===
@@ -63,7 +63,9 @@ fname <- "restaurants.xml"
 download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml")
 doc <- xmlParse(fname) 
 answer4 <- length(xpathApply(doc, "//zipcode[text()='21231']", xmlValue))
-print(paste("There are", answer4, "restaurants with the zipcode 21231"))
+
+## Expected output: "There are 127 restaurants with the zipcode 21231"
+msg("There are", answer4, "restaurants with the zipcode 21231")
 
 ## === Question 5 ===
 ## The American Community Survey distributes downloadable data about United States communities. 
@@ -98,7 +100,7 @@ funs <- list(
 )
 
 ## set to FALSE if you want to remove verbose logs below
-debug <- FALSE
+debug <- TRUE
 
 fastest <- NULL
 min <- .Machine$integer.max
