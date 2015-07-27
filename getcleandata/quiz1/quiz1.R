@@ -1,9 +1,6 @@
-packages <- c("data.table", "xlsx", "XML")
-sapply(packages, require, character.only = TRUE, quietly = TRUE)
-
-## Set working directory to the script's location
-this.dir <- dirname(parent.frame(2)$ofile)
-setwd(this.dir)
+source("utils.R")
+set_wd("quiz1")
+load_packages("data.table", "xlsx", "XML")
 
 ## === Question 1 ===
 ##
@@ -20,13 +17,13 @@ setwd(this.dir)
 ## How many properties are worth $1,000,000 or more?
 
 fname <- "survey.csv"
-if (!file.exists(fname)) 
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile = fname, method = "curl")
+download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
 survey_df <- read.csv(fname, header = TRUE, sep = ",")
 
 answer1 <- nrow(subset(survey_df, VAL == 24))
-## output: "There are 53 properties worth $1,000,000 or more."
-print(paste("There are", answer1, "properties worth $1,000,000 or more."))
+
+## Expected output: "There are 53 properties worth $1,000,000 or more."
+msg("There are", answer1, "properties worth $1,000,000 or more.")
 
 ## === Question 2 ===
 ## Use the data you loaded from Question 1. 
@@ -50,11 +47,12 @@ print("The FES definition breaks the 'Tidy data has one variable per column' pri
 ## sum(dat$Zip*dat$Ext,na.rm=T)
 
 fname <- "GAP.xlsx"
-if (!file.exists(fname)) 
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx", destfile = fname, method = "curl")
+download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx")
 dat <- read.xlsx(fname, 1, rowIndex = 18:23, colIndex = 7:15)
 answer3 <- sum(dat$Zip*dat$Ext,na.rm=T)
-print(paste("The value of sum(dat$Zip*dat$Ext,na.rm=T) is", answer3))
+
+## Expected output: The value of sum(dat$Zip*dat$Ext,na.rm=T) is 36534720
+msg("The value of sum(dat$Zip*dat$Ext,na.rm=T) is", answer3)
 
 ## === Question 4 ===
 ## Read the XML data on Baltimore restaurants from here:
@@ -62,8 +60,7 @@ print(paste("The value of sum(dat$Zip*dat$Ext,na.rm=T) is", answer3))
 ## How many restaurants have zipcode 21231?
 
 fname <- "restaurants.xml"
-if (!file.exists(fname)) 
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml", destfile = fname, method = "curl")
+download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml")
 doc <- xmlParse(fname) 
 answer4 <- length(xpathApply(doc, "//zipcode[text()='21231']", xmlValue))
 print(paste("There are", answer4, "restaurants with the zipcode 21231"))
@@ -88,8 +85,7 @@ print(paste("There are", answer4, "restaurants with the zipcode 21231"))
 ## 6. mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)
 
 fname <- "housing.csv"
-if (!file.exists(fname)) 
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv", destfile = fname, method = "curl")
+download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv")
 DT <- fread(input = fname, sep = ",")
 
 funs <- list(
@@ -117,7 +113,6 @@ lapply(funs, function(FUN) {
     if (et < min) {
       min <<- et
       fastest <<- FUN
-      print(fastest)
     }
     if (debug) {
       print(paste("elapsed time:", sprintf("%.10f", et)))
@@ -129,4 +124,6 @@ lapply(funs, function(FUN) {
 ## Answer: The function 'mean(DT$pwgtp15,by=DT$SEX)' should be the fastest one.
 print("The fastest calculation is:")
 print(fastest)
-print(paste("with running time of", sprintf("%.10f", min), "seconds"))
+msg("with running time of", sprintf("%.10f", min), "seconds")
+
+resume_wd()
