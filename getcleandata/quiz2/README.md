@@ -49,6 +49,7 @@ if (length(answer1) == 0) {
   msg("The repository 'datasharing' was created at", answer1$created_at)
 }
 ```
+__Answer:__ 2013-11-07T13:25:07Z
 
 # Question 2
 The sqldf package allows for execution of SQL commands on R data frames. We will use the sqldf package 
@@ -73,6 +74,7 @@ answer2 <- sqldf("select pwgtp1 from acs where AGEP < 50")
 msg("Probability weights for people with ages less than 50:")
 msg("sqldf('select pwgtp1 from acs where AGEP < 50'):", head(answer2))
 ```
+__Answer:__ sqldf("select pwgtp1 from acs where AGEP < 50")
 
 # Question 3
 Using the same data frame you created in the previous problem, what is the equivalent function to ```unique(acs$AGEP)```
@@ -100,6 +102,7 @@ lapply(queries, function(q) {
   }
 })
 ```
+__Answer:__ sqldf("select distinct AGEP from acs")
 
 # Question 4
 How many characters are in the 10th, 20th, 30th and 100th lines of HTML from this page: 
@@ -122,6 +125,7 @@ sapply(c(10, 20, 30, 40), function(line) {
 # Expected output: 
 msg("Characters in the 10th, 20th, 30th and 100th lines of HTML:", paste(as.character(answer4), collapse = ", "))
 ```
+__Answer:__ 45 31 7 2
 
 # Question 5
 Read this data set into R and report the sum of the numbers in the fourth of the nine columns. 
@@ -151,3 +155,4 @@ answer5 <- sum(df[, 4])
 # Expected output: "The sum of numbers in the fourth column is 32426.7"
 msg("The sum of numbers in the fourth column is", answer5)
 ```
+__Answer:__ 32426.7
