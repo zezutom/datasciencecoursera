@@ -131,6 +131,7 @@ answer5 <- DT[Income.Group == "Lower middle income", .N,
               by = c("Income.Group", "quantileGDP")] %>%
            subset(quantileGDP == "[  1, 39)", select = N)
 
+# Expected output: "There are 5 countries with Lower middle income but among the 38 nations with highest GDP"
 msg("There are", answer5, "countries with Lower middle income but among the 38 nations with highest GDP")
 
 resume_wd()
