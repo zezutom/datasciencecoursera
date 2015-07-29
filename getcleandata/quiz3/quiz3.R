@@ -71,7 +71,6 @@ msg("The 30th and 80th quantiles are: ", stringify(answer2))
 # Original data sources: 
 # http://data.worldbank.org/data-catalog/GDP-ranking-table 
 # http://data.worldbank.org/data-catalog/ed-stats
-
 fname <- "gdp.csv"
 download_if_not_exists(fname, "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv")
 
@@ -106,8 +105,6 @@ msg("There are", answer3.1, "matches, 13th country is", answer3.2)
 # Question 4
 #
 # What is the average GDP ranking for the "High income: OECD" and "High income: nonOECD" group?
-
-#answer4 <- merged[, mean(merged$rankingGDP, na.rm = TRUE, by = merged$Income.Group)]
 avg_rank <- function(label) {
   income_group <- subset(merged, merged$Income.Group == label)
   mean(as.numeric(income_group$rankingGDP), na.rm = TRUE)
