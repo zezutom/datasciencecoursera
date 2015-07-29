@@ -115,7 +115,7 @@ answer4.oecd <- avg_rank("High income: OECD")
 answer4.non.oecd <- avg_rank("High income: nonOECD")
 msg("High income OECD:", answer4.oecd, "High income nonOECD:", answer4.non.oecd)
 ```
-__Answer:__ OECD: 32.9666666666667,nonOECD: 91.9130434782609
+__Answer:__ OECD: 32.9666666666667, nonOECD: 91.9130434782609
 
 # Question 5
 Cut the GDP ranking into 5 separate quantile groups. Make a table versus Income.Group. 
