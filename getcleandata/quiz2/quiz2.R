@@ -127,7 +127,7 @@ sapply(c(10, 20, 30, 40), function(line) {
   answer4 <<- c(answer4, nchar(html[line]))
 })
 # Expected output: 
-msg("Characters in the 10th, 20th, 30th and 100th lines of HTML:", paste(as.character(answer4), collapse = ", "))
+msg("Characters in the 10th, 20th, 30th and 100th lines of HTML:", stringify(answer4))
 
 # Question 5
 #
