@@ -1,4 +1,4 @@
-Source code: [quiz4.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/quiz1/quiz4.R) and [utils.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/utils.R)
+Source code: [quiz4.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/quiz4/quiz4.R) and [utils.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/utils.R)
 
 # Question 1
 The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here: 
