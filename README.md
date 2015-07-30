@@ -10,4 +10,5 @@ Course track - examples, exercises etc.
 * [Quiz 1](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata/quiz1)
 * [Quiz 2](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata/quiz2)
 * [Quiz 3](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata/quiz3)
+* [Quiz 4](https://github.com/zezutom/datasciencecoursera/tree/master/getcleandata/quiz4)
 * [Project: Human Activity Recognition Using Smartphones](https://github.com/zezutom/GetAndCleanDataProject)
