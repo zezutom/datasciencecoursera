@@ -1,7 +1,7 @@
 source("utils.R")
 set_wd("quiz4")
 
-load_packages("dplyr", "quantmod", "lubridate", "data.table")
+load_packages("dplyr", "quantmod", "lubridate")
 
 # Question 1
 #
