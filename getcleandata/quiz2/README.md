@@ -1,4 +1,4 @@
-Source code: [quiz2.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/quiz1/quiz2.R) and [utils.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/utils.R)
+Source code: [quiz2.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/quiz2/quiz2.R) and [utils.R](https://github.com/zezutom/datasciencecoursera/blob/master/getcleandata/utils.R)
 
 # Question 1
 Register an application with the Github API here:
