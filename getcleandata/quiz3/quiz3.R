@@ -111,6 +111,8 @@ avg_rank <- function(label) {
 }
 answer4.oecd <- avg_rank("High income: OECD")
 answer4.non.oecd <- avg_rank("High income: nonOECD")
+
+# Expected outcome: "High income OECD: 32.9666666666667 High income nonOECD: 91.9130434782609"
 msg("High income OECD:", answer4.oecd, "High income nonOECD:", answer4.non.oecd)
 
 # Question 5
